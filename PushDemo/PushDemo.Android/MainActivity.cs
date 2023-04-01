@@ -60,6 +60,7 @@ namespace PushDemo.Droid
         [IntentFilter(new string[] { "cn.jpush.android.intent.CONNECTION" }, Categories = new string[] { "com.iwaitu.pushdemo" })]
         public class NotificationReceiver : JPushMessageReceiver
         {
+            //仅第一次运行app时激活
             public override void OnRegister(Android.Content.Context p0, string p1)
             {
                 base.OnRegister(p0, p1);
@@ -72,9 +73,15 @@ namespace PushDemo.Droid
                 base.OnMessage(p0, p1);
             }
 
+            //默认使用这个
             public override void OnNotifyMessageArrived(Android.Content.Context p0, NotificationMessage p1)
             {
                 base.OnNotifyMessageArrived(p0, p1);
+            }
+            
+            public override void OnConnected(Android.Content.Context p0, bool p1)
+            {
+                base.OnConnected(p0, p1);
             }
         }
 
