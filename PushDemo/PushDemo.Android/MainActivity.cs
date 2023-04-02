@@ -48,6 +48,7 @@ namespace PushDemo.Droid
             JPushInterface.SetDebugMode(true);
             JPushInterface.Init(this.ApplicationContext);
 
+            //第一次会取不到
             string regID = JPushInterface.GetRegistrationID(this.ApplicationContext);
             Console.WriteLine($"<------registrationID:{regID}------------>");
         }
