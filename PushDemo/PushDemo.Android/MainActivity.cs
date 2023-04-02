@@ -78,6 +78,7 @@ namespace PushDemo.Droid
             public override void OnNotifyMessageArrived(Android.Content.Context p0, NotificationMessage p1)
             {
                 base.OnNotifyMessageArrived(p0, p1);
+                Console.WriteLine(p1.NotificationTitle + ": " + p1.NotificationContent);
             }
             
             public override void OnConnected(Android.Content.Context p0, bool p1)
